@@ -1,19 +1,19 @@
-"""An example of condintiona (if-else) statements."""
+"""Example implementing a list utility function."""
 
-SECRET: int = 3
-
-print("I'm thinking of a number between 1-5, what is it?")
-guess: int = int(input("What is your guess? "))
-
-if guess == SECRET:
-    print("You guessed correctly!!!")
-    print("You get bitches")
-else:
-    print("Sorry, incorrect you get no fucking bitches :(")
-    print( "Also you a fucking BITCH!!!")
-    if guess > SECRET:
-        print("You guessed to high!")
-    else:
-        print("You gussed too low!")
-
-print("Game over.")
+# Function name: contains
+# We will have 2 paramters: needle (str), haystack (list[str])
+# Return type bool
+def contains(needle: str, haystack: list[str]) -> bool:
+     # Gameplan:
+    # 1. Start iwth the first index
+    i: int = 0
+    # 2. Loop through every index
+    while i < len(haystack):
+        #   2.A Test if item at index equal to needle
+        if haystack[i] == needle:
+            #  We found it! No more work to do!
+                return True
+        i += 1      
+    # 3. Return False
+    # We tried searching each item and came up short!
+    return False
