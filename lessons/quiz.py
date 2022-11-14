@@ -12,15 +12,15 @@
 
 
 
-def average_grades(grades: dict[str, list[int]]) -> dict[str, float]:
-    """Averages grades."""
-    average: dict[str, float] = {}
-    for student in grades:
-        total: int = 0
-        for grade in grades[student]:
-            total += grade
-        average[student] = total / len(grades[student])
-    return average
+# def average_grades(grades: dict[str, list[int]]) -> dict[str, float]:
+#     """Averages grades."""
+#     average: dict[str, float] = {}
+#     for student in grades:
+#         total: int = 0
+#         for grade in grades[student]:
+#             total += grade
+#         average[student] = total / len(grades[student])
+#     return average
 
 
 # def best_animals(visits: dict[str, int]) -> list[str]:
@@ -36,3 +36,14 @@ def average_grades(grades: dict[str, list[int]]) -> dict[str, float]:
 #         result.append(animals)
 #         i += 1 
 #     return result
+
+
+from typing import Union
+
+def add(lhs: float = 0.0, rhs: Union[str, float] = 0.0) -> float:
+    result: float = lhs
+    if isinstance(rhs, str):
+        result += float(rhs)
+    else:
+        result += rhs
+    return result
